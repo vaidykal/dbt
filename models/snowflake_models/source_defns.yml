@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: sf_prod
+    database: DBT_DB
+    schema: STAGING
+    tables:
+      - name: STORE_SF
+      - name: STORE_SALES_SF
+
+
