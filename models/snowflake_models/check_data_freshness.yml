@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: dbt_data_freshness
+    database: DBT_DB
+    schema: PROD
+    tables:
+      - name: Employee
+    freshness: 
+          warn_after: {count: 80, period: hour}
+          error_after: {count: 800, period: hour}
+    loaded_at_field: Loaded_DT
