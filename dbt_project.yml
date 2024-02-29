@@ -36,6 +36,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
+  pre-hook:
+    - "{{update_model_params()}}"
+  post-hook:
+    - "{{insert_into_dbtlogs()}}"
   my_new_project:
     # Applies to all files under models/example/
     example:
