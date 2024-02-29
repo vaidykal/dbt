@@ -1,0 +1,1 @@
+select first_name, last_name, salary, dense_rank() over(order by salary desc) as rnk from PROD.EMPLOYEE qualify rnk<4
